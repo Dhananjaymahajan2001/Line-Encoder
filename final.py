@@ -2,6 +2,7 @@ import matplotlib.pyplot as plot
 import numpy as np
 import random
 
+
 # Decoder Function
 
 
@@ -262,9 +263,8 @@ def AMI(data):
 
 
 # main function
-a1 = 1
+a1 = True
 while a1:
-    a1 = 0
     option1 = int(input("No of bits to be encoded "))
     if option1 > 0:
         option2 = int(input("Press 0 for random or 1 with fixed 0 sequence or 2 for fixed sequence "))
@@ -335,8 +335,15 @@ while a1:
 
             # Decoder
 
-            b1 = int(input(f"IF you want to decode Press 0 : "))
-            if b1 == 0:
+            out_dec = int(input(f"If you want to decode Press 1 else press 0: "))
+            if out_dec == 1:
+                b1 = True
+            elif out_dec > 1 or out_dec < 0:
+                print("Please enter from one of the options")
+            elif out_dec == 0:
+                b1 = False
+
+            if b1:
                 print("OUTPUT AFTER DECODING")
                 if option5 == 1:
                     print(dec_NRZL(ans))
@@ -354,12 +361,14 @@ while a1:
                             print(dec_B8ZS(ans))
                         else:
                             print(dec_HDB3(ans))
-                else:
-                    print("Bits entered are less than the fixed sequence entered")
-            else:
-                print("Please enter from one of the options")
         else:
             print("Please enter from one of the options")
     else:
         print("Please enter a positive number")
-    a1 = int(input(f"If you want to continue press 1 and 0 for exit: "))
+    out_enc = int(input(f"If you want to continue press 1 and 0 for exit: "))
+    if out_enc == 0:
+        a1 = False
+        print("Thanks for using our encoder :)")
+    elif out_enc > 1 or out_enc < 0:
+        print("Please enter from one of the options")
+
