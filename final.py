@@ -288,12 +288,13 @@ while a1:
                             data.append(0)
             elif option2 == 2:
                 for i in range(option1):
-                    data.append(input())
+                    data.append(int(input()))
 
             print(f"Longest Palindromic sequence is {longestPalindrome(data)}")
 
             # choice of Encoding
-            option5 = int(input("Enter your choice of encoding :\n1-NRZ-L\n2-NRZ-I\n3-Manchester\n4-Diff Manchester\n5-AMI\n"))
+            option5 = int(input("Enter your choice of encoding :\n1-NRZ-L\n2-NRZ-I\n3-Manchester\n4-Diff "
+                                "Manchester\n5-AMI\n"))
             if option5 == 5:
                 option6 = int(input("Press 1 for scrambling else 0 "))
                 if option6 == 1:
@@ -365,10 +366,7 @@ while a1:
             print("Please enter from one of the options")
     else:
         print("Please enter a positive number")
-    out_enc = int(input(f"If you want to continue press 1 and 0 for exit: "))
+    out_enc = int(input(f"If you want to continue press 1 else 0 for exit: "))
     if out_enc == 0:
         a1 = False
         print("Thanks for using our encoder :)")
-    elif out_enc > 1 or out_enc < 0:
-        print("Please enter from one of the options")
-
